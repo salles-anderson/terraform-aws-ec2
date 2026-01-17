@@ -1,0 +1,26 @@
+# Project Configuration
+project_name = "linux-lab"
+environment  = "dev"
+aws_region   = "us-east-1"
+
+# VPC Configuration
+vpc_cidr        = "10.0.0.0/16"
+azs             = ["us-east-1a", "us-east-1b"]
+public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
+private_subnets = ["10.0.101.0/24", "10.0.102.0/24"]
+
+# EC2 Configuration
+instance_type         = "t3.micro"
+bastion_instance_type = "t3.micro"
+volume_size           = 20
+key_name              = null  # SSM is preferred, set if SSH is needed
+
+# Auto Scaling Configuration
+asg_min_size         = 1
+asg_max_size         = 3
+asg_desired_capacity = 1
+
+# Additional Tags
+tags = {
+  Owner = "your-name"
+}
